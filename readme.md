@@ -1,0 +1,13 @@
+- clone this repositary
+- setup virtual envronment
+- do pip -r install requirements.txt
+- do python mange.py runserver
+- open 127.0.0.1:8000
+- here users can add product by clicking add product button
+- by clicking on edit buttonn we can edit
+- on clicking delte the product will be deleted
+- click on the right top corners home icon to go to add product sto the cart
+- you can add product to the cart by add cart button
+- on top right there is cart button wich will get you to cart
+- you can increase or decrease the quantity of product
+- click on the user button to redirect to product add page

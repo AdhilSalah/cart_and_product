@@ -1,0 +1,37 @@
+{%load static%}
+{%for item in product%}
+<div class="modal fade" id="exampleModal1-{{item.id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <h1 id="myname" hidden></h1>
+          <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form action="{%url 'edit_data' item.id %}" enctype="multipart/form-data" method="post">
+                {%csrf_token%}
+            <label for="formFileSm"   class="form-label">product_name</label>
+            <input type="text" id="result" value="{{item.product_name}}" name="product">           
+            <div class="mb-3">
+                <label for="formFileSm" class="form-label">Add a Image</label>
+                <input class="form-control form-control-sm" name="image" id="formFileSm"  value="{{item.image.url}}" type="file">
+            </div>
+            <label for="formFileSm" class="form-label">Price</label>
+            <input type="text"  value="{{item.price}}"name="price">
+            <label for="formFileSm" class="form-label">description</label>
+            <input type="text"  value ="{{item.description }}" name="description">
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-success">Save changes</button>
+        </div>
+    </form>
+    <p style="color: red;" id="product_name" ></p>
+      </div>
+    </div>
+  </div>
+  {%endfor%}
+
+
+
+  
