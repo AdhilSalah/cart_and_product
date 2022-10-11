@@ -21,7 +21,8 @@ def add_product(request):
         product_name = request.POST['product']
         image = request.FILES.get('image')
         price = request.POST['price']
-        Products.objects.create(product_name=product_name,image=image,price=price)
+        description = request.POST['description']
+        Products.objects.create(product_name=product_name,image=image,price=price,description=description)
 
     return redirect(home)
 
@@ -32,12 +33,14 @@ def edit_data(request,pk):
         product_name = request.POST['product']
         image = request.FILES.get('image')
         price = request.POST['price']
+        description = request.POST['description']
 
         if image is None:
             image = product.image
         product.product_name=product_name
         product.price=price
         product.image = image
+        product.description = description
         product.save()
 
         return redirect(home)
