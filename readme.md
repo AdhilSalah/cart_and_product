@@ -1,6 +1,8 @@
 - clone this repositary
 - setup virtual envronment
 - do pip -r install requirements.txt
+- do python manage.py makemigrations
+- do python manage.py migrate
 - do python mange.py runserver
 - open 127.0.0.1:8000
 - here users can add product by clicking add product button
